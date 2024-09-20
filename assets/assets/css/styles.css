@@ -1,0 +1,163 @@
+:root {
+  --background-color: white;
+  --text-color: black;
+  --header-background-color: white;
+  --header-border-color: black;
+  --line-color: black;
+  --slider-background-color: #ccc;
+  --slider-checked-background-color: #2196f3;
+}
+
+body.light-mode {
+  --background-color: white;
+  --text-color: black;
+  --header-background-color: white;
+  --header-border-color: black;
+  --line-color: black;
+}
+
+body.dark-mode {
+  --background-color: black;
+  --text-color: white;
+  --header-background-color: black;
+  --header-border-color: white;
+  --line-color: white;
+  --slider-background-color: #444;
+  --slider-checked-background-color: #bbb;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.header {
+  height: 10%;
+  background-color: var(--header-background-color);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border-bottom: 10px double var(--header-border-color);
+  padding-right: 20px; /* Add some padding to the right */
+}
+
+.toggle-switch {
+  margin-left: auto;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--slider-background-color);
+  transition: 0.4s;
+  border-radius: 34px;
+  background-image: var(--slider-background-image);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50%;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--slider-checked-background-color);
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.content {
+  height: 90%;
+  display: flex;
+}
+
+.left-column {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background-color);
+  padding: 20px;
+}
+
+.right-column {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  padding: 20px;
+  background-color: var(--background-color);
+}
+
+.line {
+  position: relative;
+  width: 10px;
+}
+
+.line::before,
+.line::after {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 100%;
+  background-color: var(--line-color);
+}
+
+.line::before {
+  left: 0;
+}
+
+.line::after {
+  right: 0;
+}
+
+.centered-image {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.centered-form {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  width: 200%;
+  max-width: 200%;
+}
+
+.centered-form textarea {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}

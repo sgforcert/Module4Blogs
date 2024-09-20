@@ -1,0 +1,191 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  border-bottom: 15px double var(--header-border-color);
+  padding-left: 40px; /* Moves the header 40px to the right */
+  padding-right: 20px; /* Adds some padding to the right */
+}
+
+header h1 {
+  margin: 0;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+#back-button {
+  font-size: 16px;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-right: 20px; /* Add space between button and switch */
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--slider-background-color);
+  transition: 0.4s;
+  border-radius: 34px;
+  background-image: var(--slider-background-image);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50%;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--slider-checked-background-color);
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+body.light-mode {
+  --background-color: white;
+  --text-color: black;
+  --header-background-color: white;
+  --header-border-color: black;
+  --line-color: black;
+  --slider-background-color: #ccc;
+  --slider-checked-background-color: #2196f3;
+  --border-color: black;
+  --footer-text-color: grey;
+  --footer-left-text-color: black;
+}
+
+body.dark-mode {
+  --background-color: black;
+  --text-color: white;
+  --header-background-color: black;
+  --header-border-color: white;
+  --line-color: white;
+  --slider-background-color: #444;
+  --slider-checked-background-color: #bbb;
+  --border-color: white;
+  --footer-text-color: grey; /* Set footer text color to grey */
+  --footer-left-text-color: white;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.blog-post {
+  margin: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.blog-post-container {
+  margin-bottom: 20px;
+  padding: 5px; /* Change padding to 5px */
+  border: 2px solid var(--border-color); /* Use border color variable */
+}
+
+.blog-post h2 {
+  border-bottom: 2px solid var(--border-color); /* Use border color variable */
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+
+.blog-post p {
+  margin-bottom: 2em; /* Adds two lines of space below the paragraph */
+}
+
+#blog-author {
+  color: grey;
+  font-family: Arial, sans-serif;
+  font-size: 15px; /* Changes the font size to 15px */
+  text-transform: capitalize; /* Ensures the first letter of each word is capitalized */
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  color: grey; /* Set footer text color to grey */
+  border-top: 15px double var(--border-color); /* Use border color variable */
+  position: relative;
+}
+
+.footer-left {
+  text-align: left;
+  color: var(
+    --footer-left-text-color
+  ); /* Use footer left text color variable */
+  font-style: italic;
+  font-size: 15px;
+  font-weight: bold; /* Adds bold styling */
+}
+
+.footer-left .normal-text {
+  font-weight: normal; /* Makes the text inside the spans normal (not bold) */
+}
+
+.footer-right {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+#footer-text {
+  margin: 0;
+  color: grey; /* Ensure the footer-text color is grey */
+}
+
+#footer-author {
+  color: grey; /* Set footer author text color to grey */
+}
+
+.red-heart {
+  color: red;
+}
